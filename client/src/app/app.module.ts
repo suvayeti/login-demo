@@ -9,20 +9,26 @@ import {MaterialModule} from './material/material.module';
 import { LoginComponent } from './login/login.component'
 
 import {FlexLayoutModule} from '@angular/flex-layout'
+import { LoginService } from './login.service';
+import { RegisterComponent } from './register/register.component';
+
+import {ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

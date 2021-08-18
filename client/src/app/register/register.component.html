@@ -1,0 +1,53 @@
+<div fxLayoutAlign="center center">
+    <mat-card fxFlex="20" >
+        <mat-card-header>
+          
+          <mat-card-title>Register Here </mat-card-title>
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          
+            <form class="example-form" [formGroup]="registerForm">
+                <mat-form-field >
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Input User Name" formControlName="name" >
+                    <mat-error > Name cannot be empty </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field >
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Input Address" formControlName="address" >
+                    <mat-error > Address cannot be empty </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field >
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Input Email" formControlName="email" >
+                    <mat-error > Email cannot be empty </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field >
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Input Password" formControlName="password" >
+                    <mat-error > Password cannot be empty </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field >
+                    <mat-label>Confirm Password</mat-label>
+                    <input type="password" matInput placeholder="Confirm password" formControlName="confirm-password" >
+                    <mat-error > Confirm password should match password </mat-error>
+                </mat-form-field>
+                <div [ngStyle]="{'background':'teal'}">
+                <span [ngStyle]="{'color':'red', 'font-size':'12px'}">{{passwordError}}</span>
+                </div>
+                <button mat-raised-button color="primary" [disabled]="!registerForm.valid"(click)=onRegister()>Register</button>
+              </form>
+         
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="end">
+         
+        </mat-card-actions>
+      </mat-card>
+    
+    </div>
+    
